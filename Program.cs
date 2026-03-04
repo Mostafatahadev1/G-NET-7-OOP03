@@ -49,6 +49,20 @@
            */
             #endregion
 
+            #region B
+            /*
+                
+               B => protected internal:
+                Accessible either from the same assembly OR from derived classes (even if they are in a different assembly).
+                
+              private protected:
+
+                Accessible only within the same assembly AND only through inheritance.
+                
+
+            */
+            #endregion
+
             #endregion
         }
     }
