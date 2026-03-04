@@ -199,25 +199,25 @@
 
             #region Part 2 Assignment 3
 
-            Cinema cinema = new Cinema();
-
-            cinema.OpenCinema();
-
-            Ticket t1 = new StandardTicket("Inception", 120, "A-5");
-            Ticket t2 = new VIPTicket("Avengers", 200, true);
-            Ticket t3 = new IMAXTicket("Dune", 180, false);
-
-            cinema.AddTicket(t1);
-            cinema.AddTicket(t2);
-            cinema.AddTicket(t3);
-
-            cinema.PrintAllTickets();
-
-            cinema.CloseCinema();
-
-
-            Console.WriteLine($"\nBooking Ref 1: {t1.BookingReference}");
-            Console.WriteLine($"Booking Ref 2: {t2.BookingReference}");
+          // Cinema cinema = new Cinema();
+          //
+          // cinema.OpenCinema();
+          //
+          // Ticket t1 = new StandardTicket("Inception", 120, "A-5");
+          // Ticket t2 = new VIPTicket("Avengers", 200, true);
+          // Ticket t3 = new IMAXTicket("Dune", 180, false);
+          //
+          // cinema.AddTicket(t1);
+          // cinema.AddTicket(t2);
+          // cinema.AddTicket(t3);
+          //
+          // cinema.PrintAllTickets();
+          //
+          // cinema.CloseCinema();
+          //
+          //
+          // Console.WriteLine($"\nBooking Ref 1: {t1.BookingReference}");
+          // Console.WriteLine($"Booking Ref 2: {t2.BookingReference}");
             #endregion
 
 
