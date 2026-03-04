@@ -94,6 +94,48 @@
             #endregion
 
             #endregion
+
+            #region Assignment 1 
+         // Console.Write("Enter Movie Name: ");
+         // string movieName = Console.ReadLine();
+         //
+         // Console.Write("Enter Ticket Type (0 = Standard , 1 = VIP , 2 = IMAX): ");
+         // int typeInput = int.Parse(Console.ReadLine());
+         // TicketType type = (TicketType)typeInput;
+         //
+         // Console.Write("Enter Seat Row (A, B, C...): ");
+         // char row = char.Parse(Console.ReadLine());
+         //
+         // Console.Write("Enter Seat Number: ");
+         // int number = int.Parse(Console.ReadLine());
+         //
+         // Console.Write("Enter Price: ");
+         // double price = double.Parse(Console.ReadLine());
+         //
+         // Console.Write("Enter Discount Amount: ");
+         // double discount = double.Parse(Console.ReadLine());
+         //
+         // Seat seat = new Seat(row, number);
+         // Ticket ticket = new Ticket(movieName, type, seat, price);
+         //
+         // Console.WriteLine();
+         //
+         // double total = ticket.CalcTotal(14);
+         //
+         // ticket.PrintTicket();
+         // Console.WriteLine($"Total (14% tax) : {total:F2}");
+         //
+         // Console.WriteLine();
+         // Console.WriteLine("===== After Discount =====");
+         //
+         // Console.WriteLine($"Discount Before : {discount:F2}");
+         // ticket.ApplyDiscount(ref discount);
+         // Console.WriteLine($"Discount After  : {discount:F2}");
+         //
+         // ticket.PrintTicket();
+            #endregion
+
+
         }
     }
 }
