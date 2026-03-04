@@ -63,6 +63,27 @@
             */
             #endregion
 
+            #region C
+            /*
+            c => Sealed is a modifier that can be applied to classes and methods in C#.
+            When sealed is applied to a class:
+            It prevents the class from being inherited.
+            
+            Example:
+            sealed class MyClass { }
+            
+            When sealed is applied to a method:
+            It prevents further overriding in derived classes.
+            It must be used with an overridden method.
+            
+            So:
+            sealed class → no inheritance
+            sealed method → no further override
+            */
+            #endregion
+
+           
+
             #endregion
         }
     }
