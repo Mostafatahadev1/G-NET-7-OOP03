@@ -82,7 +82,16 @@
             */
             #endregion
 
-           
+            #region D
+            /*
+                d =>  Yes, you can create an object from a sealed class using new.
+                
+                The sealed keyword only prevents inheritance,
+                but it does not prevent object instantiation.
+                
+            */
+
+            #endregion
 
             #endregion
         }
