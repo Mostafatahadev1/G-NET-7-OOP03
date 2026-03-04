@@ -35,6 +35,21 @@
             #endregion
 
             #endregion
+
+            #region Part 2
+            #region A
+            /*
+                
+               A =>  Yes, a child class in a different assembly can access a protected field 
+                because protected allows access through inheritance.
+                
+                However, it cannot be accessed through an object instance from outside 
+                the class hierarchy. Protected members are only accessible inside the 
+                class itself or inside derived classes.
+           */
+            #endregion
+
+            #endregion
         }
     }
 }
