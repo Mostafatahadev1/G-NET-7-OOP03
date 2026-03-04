@@ -96,45 +96,107 @@
             #endregion
 
             #region Assignment 1 
-         // Console.Write("Enter Movie Name: ");
-         // string movieName = Console.ReadLine();
-         //
-         // Console.Write("Enter Ticket Type (0 = Standard , 1 = VIP , 2 = IMAX): ");
-         // int typeInput = int.Parse(Console.ReadLine());
-         // TicketType type = (TicketType)typeInput;
-         //
-         // Console.Write("Enter Seat Row (A, B, C...): ");
-         // char row = char.Parse(Console.ReadLine());
-         //
-         // Console.Write("Enter Seat Number: ");
-         // int number = int.Parse(Console.ReadLine());
-         //
-         // Console.Write("Enter Price: ");
-         // double price = double.Parse(Console.ReadLine());
-         //
-         // Console.Write("Enter Discount Amount: ");
-         // double discount = double.Parse(Console.ReadLine());
-         //
-         // Seat seat = new Seat(row, number);
-         // Ticket ticket = new Ticket(movieName, type, seat, price);
-         //
-         // Console.WriteLine();
-         //
-         // double total = ticket.CalcTotal(14);
-         //
-         // ticket.PrintTicket();
-         // Console.WriteLine($"Total (14% tax) : {total:F2}");
-         //
-         // Console.WriteLine();
-         // Console.WriteLine("===== After Discount =====");
-         //
-         // Console.WriteLine($"Discount Before : {discount:F2}");
-         // ticket.ApplyDiscount(ref discount);
-         // Console.WriteLine($"Discount After  : {discount:F2}");
-         //
-         // ticket.PrintTicket();
+            // Console.Write("Enter Movie Name: ");
+            // string movieName = Console.ReadLine();
+            //
+            // Console.Write("Enter Ticket Type (0 = Standard , 1 = VIP , 2 = IMAX): ");
+            // int typeInput = int.Parse(Console.ReadLine());
+            // TicketType type = (TicketType)typeInput;
+            //
+            // Console.Write("Enter Seat Row (A, B, C...): ");
+            // char row = char.Parse(Console.ReadLine());
+            //
+            // Console.Write("Enter Seat Number: ");
+            // int number = int.Parse(Console.ReadLine());
+            //
+            // Console.Write("Enter Price: ");
+            // double price = double.Parse(Console.ReadLine());
+            //
+            // Console.Write("Enter Discount Amount: ");
+            // double discount = double.Parse(Console.ReadLine());
+            //
+            // Seat seat = new Seat(row, number);
+            // Ticket ticket = new Ticket(movieName, type, seat, price);
+            //
+            // Console.WriteLine();
+            //
+            // double total = ticket.CalcTotal(14);
+            //
+            // ticket.PrintTicket();
+            // Console.WriteLine($"Total (14% tax) : {total:F2}");
+            //
+            // Console.WriteLine();
+            // Console.WriteLine("===== After Discount =====");
+            //
+            // Console.WriteLine($"Discount Before : {discount:F2}");
+            // ticket.ApplyDiscount(ref discount);
+            // Console.WriteLine($"Discount After  : {discount:F2}");
+            //
+            // ticket.PrintTicket();
             #endregion
 
+            #region Assignment 2
+         //  Console.WriteLine("========= Ticket Booking =========\n");
+         //
+         //  List<Ticket> tickets = new List<Ticket>();
+         //
+         //  for (int i = 1; i <= 3; i++)
+         //  {
+         //      Console.WriteLine($"Enter data for Ticket {i}:");
+         //
+         //      Console.Write("Movie Name: ");
+         //      string movieName = Console.ReadLine();
+         //
+         //      Console.Write("Ticket Type (0=Standard, 1=VIP, 2=IMAX): ");
+         //      TicketType type = (TicketType)int.Parse(Console.ReadLine());
+         //
+         //      Console.Write("Seat Row (A-Z): ");
+         //      char row = char.Parse(Console.ReadLine());
+         //
+         //      Console.Write("Seat Number: ");
+         //      int number = int.Parse(Console.ReadLine());
+         //
+         //      Console.Write("Price: ");
+         //      double price = double.Parse(Console.ReadLine());
+         //
+         //      Seat seat = new Seat(row, number);
+         //      Ticket ticket = new Ticket(movieName, type, seat, price);
+         //
+         //      tickets.Add(ticket);
+         //
+         //      Console.WriteLine();
+         //  }
+         //
+         //  Console.WriteLine("========= All Tickets =========\n");
+         //
+         //  int count = 1;
+         //  foreach (var t in tickets)
+         //  {
+         //      Console.WriteLine(
+         //          $"Ticket #{count} | {t.MovieName} | {t.Type} | Seat: {t.Seat} | Price: {t.Price} EGP | After Tax: {t.GetPriceAfterTax()} EGP"
+         //      );
+         //      count++;
+         //  }
+         //
+         //  Console.WriteLine("\n========= Search by Movie =========");
+         //  Console.Write("Enter movie name to search: ");
+         //  string search = Console.ReadLine();
+         //
+         //  var found = tickets.FirstOrDefault(t => t.MovieName.ToLower() == search.ToLower());
+         //
+         //  if (found != null)
+         //  {
+         //      Console.WriteLine(
+         //          $"Found: {found.MovieName} | {found.Type} | Seat: {found.Seat} | Price: {found.Price} EGP"
+         //      );
+         //  }
+         //  else
+         //  {
+         //      Console.WriteLine("Movie not found.");
+         //  }
+            #endregion
+
+            
 
         }
     }

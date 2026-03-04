@@ -1,40 +1,69 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment_session_03
 {
-    public  class Ticket
+    public class Ticket
     {
-        public string MovieName;
-        public TicketType Type;
-        public Seat Seat;
+        private string movieName;
+        private double price; 
 
-        private double Price;
+        public int TicketId { get; }
 
+        private static int ticketCounter = 0;
 
+    
         public Ticket(string movieName, TicketType type, Seat seat, double price)
         {
+            ticketCounter++;
+            TicketId = ticketCounter;
+
             MovieName = movieName;
             Type = type;
             Seat = seat;
-            Price = price;
+            Price = price; 
         }
 
-
+        // Constructor افتراضي
         public Ticket(string movieName)
             : this(movieName, TicketType.Standard, new Seat('A', 1), 50)
         {
         }
 
-        public double CalcTotal(double taxPercent)
+        // Properties
+        public string MovieName
         {
-            double total = Price + (Price * taxPercent / 100);
-            return total;
+            get => movieName;
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                    movieName = value;
+            }
         }
 
+        public double Price
+        {
+            get => price;
+            set
+            {
+                if (value > 0)
+                    price = value;
+            }
+        }
+
+        public double PriceAfterTax
+        {
+            get => price * 1.14;
+        }
+
+        public TicketType Type { get; set; }
+
+        public Seat Seat { get; set; }
+
+        
+        public double CalcTotal(double taxPercent)
+        {
+            return Price + (Price * taxPercent / 100);
+        }
 
         public void ApplyDiscount(ref double discountAmount)
         {
@@ -45,7 +74,6 @@ namespace Assignment_session_03
             }
         }
 
-  
         public void PrintTicket()
         {
             Console.WriteLine("===== Ticket Info =====");
@@ -54,5 +82,18 @@ namespace Assignment_session_03
             Console.WriteLine($"Seat   : {Seat}");
             Console.WriteLine($"Price  : {Price:F2}");
         }
+
+        public static int GetTotalTicketsSold()
+        {
+            return ticketCounter;
+        }
+
+        public double GetPriceAfterTax()
+        {
+            return Price * 1.14; // 14% tax
+        }
     }
-}
+
+
+
+    }
