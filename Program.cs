@@ -136,67 +136,91 @@
             #endregion
 
             #region Assignment 2
-         //  Console.WriteLine("========= Ticket Booking =========\n");
-         //
-         //  List<Ticket> tickets = new List<Ticket>();
-         //
-         //  for (int i = 1; i <= 3; i++)
-         //  {
-         //      Console.WriteLine($"Enter data for Ticket {i}:");
-         //
-         //      Console.Write("Movie Name: ");
-         //      string movieName = Console.ReadLine();
-         //
-         //      Console.Write("Ticket Type (0=Standard, 1=VIP, 2=IMAX): ");
-         //      TicketType type = (TicketType)int.Parse(Console.ReadLine());
-         //
-         //      Console.Write("Seat Row (A-Z): ");
-         //      char row = char.Parse(Console.ReadLine());
-         //
-         //      Console.Write("Seat Number: ");
-         //      int number = int.Parse(Console.ReadLine());
-         //
-         //      Console.Write("Price: ");
-         //      double price = double.Parse(Console.ReadLine());
-         //
-         //      Seat seat = new Seat(row, number);
-         //      Ticket ticket = new Ticket(movieName, type, seat, price);
-         //
-         //      tickets.Add(ticket);
-         //
-         //      Console.WriteLine();
-         //  }
-         //
-         //  Console.WriteLine("========= All Tickets =========\n");
-         //
-         //  int count = 1;
-         //  foreach (var t in tickets)
-         //  {
-         //      Console.WriteLine(
-         //          $"Ticket #{count} | {t.MovieName} | {t.Type} | Seat: {t.Seat} | Price: {t.Price} EGP | After Tax: {t.GetPriceAfterTax()} EGP"
-         //      );
-         //      count++;
-         //  }
-         //
-         //  Console.WriteLine("\n========= Search by Movie =========");
-         //  Console.Write("Enter movie name to search: ");
-         //  string search = Console.ReadLine();
-         //
-         //  var found = tickets.FirstOrDefault(t => t.MovieName.ToLower() == search.ToLower());
-         //
-         //  if (found != null)
-         //  {
-         //      Console.WriteLine(
-         //          $"Found: {found.MovieName} | {found.Type} | Seat: {found.Seat} | Price: {found.Price} EGP"
-         //      );
-         //  }
-         //  else
-         //  {
-         //      Console.WriteLine("Movie not found.");
-         //  }
+            //  Console.WriteLine("========= Ticket Booking =========\n");
+            //
+            //  List<Ticket> tickets = new List<Ticket>();
+            //
+            //  for (int i = 1; i <= 3; i++)
+            //  {
+            //      Console.WriteLine($"Enter data for Ticket {i}:");
+            //
+            //      Console.Write("Movie Name: ");
+            //      string movieName = Console.ReadLine();
+            //
+            //      Console.Write("Ticket Type (0=Standard, 1=VIP, 2=IMAX): ");
+            //      TicketType type = (TicketType)int.Parse(Console.ReadLine());
+            //
+            //      Console.Write("Seat Row (A-Z): ");
+            //      char row = char.Parse(Console.ReadLine());
+            //
+            //      Console.Write("Seat Number: ");
+            //      int number = int.Parse(Console.ReadLine());
+            //
+            //      Console.Write("Price: ");
+            //      double price = double.Parse(Console.ReadLine());
+            //
+            //      Seat seat = new Seat(row, number);
+            //      Ticket ticket = new Ticket(movieName, type, seat, price);
+            //
+            //      tickets.Add(ticket);
+            //
+            //      Console.WriteLine();
+            //  }
+            //
+            //  Console.WriteLine("========= All Tickets =========\n");
+            //
+            //  int count = 1;
+            //  foreach (var t in tickets)
+            //  {
+            //      Console.WriteLine(
+            //          $"Ticket #{count} | {t.MovieName} | {t.Type} | Seat: {t.Seat} | Price: {t.Price} EGP | After Tax: {t.GetPriceAfterTax()} EGP"
+            //      );
+            //      count++;
+            //  }
+            //
+            //  Console.WriteLine("\n========= Search by Movie =========");
+            //  Console.Write("Enter movie name to search: ");
+            //  string search = Console.ReadLine();
+            //
+            //  var found = tickets.FirstOrDefault(t => t.MovieName.ToLower() == search.ToLower());
+            //
+            //  if (found != null)
+            //  {
+            //      Console.WriteLine(
+            //          $"Found: {found.MovieName} | {found.Type} | Seat: {found.Seat} | Price: {found.Price} EGP"
+            //      );
+            //  }
+            //  else
+            //  {
+            //      Console.WriteLine("Movie not found.");
+            //  }
             #endregion
 
-            
+
+            #region Part 2 Assignment 3
+
+            Cinema cinema = new Cinema();
+
+            cinema.OpenCinema();
+
+            Ticket t1 = new StandardTicket("Inception", 120, "A-5");
+            Ticket t2 = new VIPTicket("Avengers", 200, true);
+            Ticket t3 = new IMAXTicket("Dune", 180, false);
+
+            cinema.AddTicket(t1);
+            cinema.AddTicket(t2);
+            cinema.AddTicket(t3);
+
+            cinema.PrintAllTickets();
+
+            cinema.CloseCinema();
+
+
+            Console.WriteLine($"\nBooking Ref 1: {t1.BookingReference}");
+            Console.WriteLine($"Booking Ref 2: {t2.BookingReference}");
+            #endregion
+
+
 
         }
     }

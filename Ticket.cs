@@ -1,99 +1,48 @@
-﻿using System;
-
-namespace Assignment_session_03
+﻿namespace Assignment_session_03
 {
-    public class Ticket
+    public abstract class Ticket
     {
-        private string movieName;
-        private double price; 
+        private static int ticketCounter = 0;
+        private static int bookingCounter = 0;
 
         public int TicketId { get; }
+        public string BookingReference { get; }
+        public string MovieName { get; set; }
 
-        private static int ticketCounter = 0;
-
-    
-        public Ticket(string movieName, TicketType type, Seat seat, double price)
-        {
-            ticketCounter++;
-            TicketId = ticketCounter;
-
-            MovieName = movieName;
-            Type = type;
-            Seat = seat;
-            Price = price; 
-        }
-
-        // Constructor افتراضي
-        public Ticket(string movieName)
-            : this(movieName, TicketType.Standard, new Seat('A', 1), 50)
-        {
-        }
-
-        // Properties
-        public string MovieName
-        {
-            get => movieName;
-            set
-            {
-                if (!string.IsNullOrWhiteSpace(value))
-                    movieName = value;
-            }
-        }
-
-        public double Price
+        private decimal price;
+        public decimal Price
         {
             get => price;
             set
             {
-                if (value > 0)
-                    price = value;
+                if (value <= 0)
+                    throw new Exception("Price must be > 0");
+                price = value;
             }
         }
 
-        public double PriceAfterTax
+        public decimal PriceAfterTax => Price * 1.14m;
+
+        public Ticket(string movieName, decimal price)
         {
-            get => price * 1.14;
+            ticketCounter++;
+            TicketId = ticketCounter;
+
+            bookingCounter++;
+            BookingReference = $"BK-{bookingCounter}";
+
+            MovieName = movieName;
+            Price = price;
         }
 
-        public TicketType Type { get; set; }
-
-        public Seat Seat { get; set; }
-
-        
-        public double CalcTotal(double taxPercent)
-        {
-            return Price + (Price * taxPercent / 100);
-        }
-
-        public void ApplyDiscount(ref double discountAmount)
-        {
-            if (discountAmount > 0 && discountAmount <= Price)
-            {
-                Price -= discountAmount;
-                discountAmount = 0;
-            }
-        }
-
-        public void PrintTicket()
-        {
-            Console.WriteLine("===== Ticket Info =====");
-            Console.WriteLine($"Movie  : {MovieName}");
-            Console.WriteLine($"Type   : {Type}");
-            Console.WriteLine($"Seat   : {Seat}");
-            Console.WriteLine($"Price  : {Price:F2}");
-        }
-
-        public static int GetTotalTicketsSold()
+        public static int GetTotalTickets()
         {
             return ticketCounter;
         }
 
-        public double GetPriceAfterTax()
+        public override string ToString()
         {
-            return Price * 1.14; // 14% tax
+            return $"Ticket #{TicketId} | {MovieName} | Price: {Price} EGP | After Tax: {PriceAfterTax:F2} EGP";
         }
     }
-
-
-
-    }
+}

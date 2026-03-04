@@ -1,28 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assignment_session_03
+﻿namespace Assignment_session_03
 {
     public class Cinema
     {
         private Ticket[] tickets = new Ticket[20];
+        private Projector projector = new Projector();
 
-        public Ticket this[int index]
+        public void OpenCinema()
         {
-            get
-            {
-                if (index >= 0 && index < tickets.Length)
-                    return tickets[index];
-                return null;
-            }
-            set
-            {
-                if (index >= 0 && index < tickets.Length)
-                    tickets[index] = value;
-            }
+            Console.WriteLine("========= Cinema Opened =========");
+            projector.Start();
+        }
+
+        public void CloseCinema()
+        {
+            projector.Stop();
         }
 
         public bool AddTicket(Ticket t)
@@ -38,17 +29,18 @@ namespace Assignment_session_03
             return false;
         }
 
-        public Ticket GetMovie(string movieName)
+        public void PrintAllTickets()
         {
-            foreach (var ticket in tickets)
+            Console.WriteLine("\n========= All Tickets =========");
+
+            foreach (var t in tickets)
             {
-                if (ticket != null &&
-                    ticket.MovieName.Equals(movieName, StringComparison.OrdinalIgnoreCase))
-                {
-                    return ticket;
-                }
+                if (t != null)
+                    Console.WriteLine(t);
             }
-            return null;
+
+            Console.WriteLine("\n========= Statistics =========");
+            Console.WriteLine($"Total Tickets Created: {Ticket.GetTotalTickets()}");
         }
     }
 }
